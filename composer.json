@@ -1,0 +1,33 @@
+{
+  "name": "oro/microsoft-power-bi-dashboard",
+  "description": "Oro Microsoft Power BI Bundle",
+  "homepage": "https://git.oroinc.com/extensions/microsoft-power-bi-dashboard",
+  "license": "OSL-3.0",
+  "keywords": ["Oro", "Microsoft", "Power BI", "Dashboard", "Bundle"],
+  "authors": [
+    {
+      "name": "Oro, Inc",
+      "homepage": "http://www.oroinc.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {"Oro\\Bundle\\MicrosoftPowerBiDashboardBundle\\": ""},
+    "exclude-from-classmap": ["/Tests/"]
+  },
+  "repositories": {
+    "composer": {
+      "type": "composer",
+      "url": "https://packagist.orocrm.com"
+    }
+  },
+  "require": {
+    "oro/commerce-enterprise": "5.0.*"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "branch-alias": {
+      "dev-master": "5.0-dev"
+    }
+  }
+}

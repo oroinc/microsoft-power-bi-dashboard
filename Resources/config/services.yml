@@ -1,0 +1,5 @@
+services:
+    oro_microsoft_power_bi_dashboard.extension.dashboard:
+        class: Oro\Bundle\MicrosoftPowerBiDashboardBundle\Form\Extension\DashboardTypeExtension
+        tags:
+            - { name: form.type_extension, alias: oro_microsoft_power_bi_dashboard, extended_type: Oro\Bundle\DashboardBundle\Form\Type\DashboardType }

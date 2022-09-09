@@ -1,0 +1,10 @@
+{% block _oro_dashboard_type_widget %}
+    {% import '@OroUI/macros.html.twig' as UI %}
+
+    <div {{ UI.renderPageComponentAttributes({
+        module: 'microsoftpowerbidashboard/js/app/components/microsoft-power-bi-dashboard-component',
+        name: 'microsoft-power-bi-dashboard'
+    }) }}>
+        {{ block('form') }}
+    </div>
+{% endblock %}

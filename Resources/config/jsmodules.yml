@@ -1,0 +1,3 @@
+dynamic-imports:
+    microsoftpowerbidashboard:
+        - microsoftpowerbidashboard/js/app/components/microsoft-power-bi-dashboard-component

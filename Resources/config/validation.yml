@@ -1,0 +1,8 @@
+Oro\Bundle\DashboardBundle\Entity\Dashboard:
+    constraints:
+        - Oro\Bundle\MicrosoftPowerBiDashboardBundle\Validator\Constraints\MicrosoftPowerBiDashboard: ~
+    properties:
+        embed_url:
+            - Regex:
+                pattern: '/^https:\/\/app\.powerbi\.com\/reportEmbed\?[a-zA-Z0-9\/\-_]*$/'
+                message: "This value is not valid. Url should start with \"https://app.powerbi.com/reportEmbed?\""
