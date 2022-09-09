@@ -9,9 +9,11 @@ use Symfony\Component\Validator\ConstraintValidator;
 
 class MicrosoftPowerBiDashboardValidator extends ConstraintValidator
 {
+    public const POWER_BI_URL_EMBED_PATTERN = '/^https:\/\/app\.powerbi\.com\/reportEmbed\?[a-zA-Z0-9\/\-_=&]*$/';
+
     /**
      * @param Dashboard|object $value
-     * @param MicrosoftPowerBiDashboard    $constraint
+     * @param MicrosoftPowerBiDashboard $constraint
      *
      * {@inheritdoc}
      */
@@ -33,16 +35,19 @@ class MicrosoftPowerBiDashboardValidator extends ConstraintValidator
 
         if (!$value->getStartDashboard()) {
             if (!$value->getType()) {
-                $this->context->buildViolation($constraint->message)
+                $this->context->buildViolation($constraint->blankMessage)
                     ->atPath('type')
                     ->addViolation();
-            } elseif (
-                $value->getType()->getId() === DashboardEnums::TYPE_MICROSOFT_POWER_BI
-                && !$value->getEmbedUrl()
-            ) {
-                $this->context->buildViolation($constraint->message)
-                    ->atPath('embed_url')
-                    ->addViolation();
+            } elseif ($value->getType()->getId() === DashboardEnums::TYPE_MICROSOFT_POWER_BI) {
+                if (!$value->getEmbedUrl()) {
+                    $this->context->buildViolation($constraint->blankMessage)
+                        ->atPath('embed_url')
+                        ->addViolation();
+                } elseif (!preg_match(self::POWER_BI_URL_EMBED_PATTERN, $value->getEmbedUrl())) {
+                    $this->context->buildViolation($constraint->patternMessage)
+                        ->atPath('embed_url')
+                        ->addViolation();
+                }
             }
         }
     }

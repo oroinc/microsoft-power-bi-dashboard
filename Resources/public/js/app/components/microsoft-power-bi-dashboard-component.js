@@ -13,6 +13,7 @@ define(function(require) {
          * @property {Object}
          */
         options: {
+            defaultValueId: 'widgets',
             microsoftPowerBiId: 'microsoft_power_bi',
             selectors: {
                 type: '[name="oro_dashboard[type]"]',
@@ -39,12 +40,16 @@ define(function(require) {
             this.fields.embedUrl = this.form.find(this.options.selectors.embedUrl);
             this.fields.startDashboard = this.form.find(this.options.selectors.startDashboard);
 
+            if (this.shouldShowDependentField()) {
+                this._showEmbedUrl();
+            }
+
             this.fields.type.on('change', this.onTypeChanged.bind(this));
             this.fields.startDashboard.on('change', this.onStartDashboardChanged.bind(this));
         },
 
         onTypeChanged: function(e) {
-            if (e.target.value === this.options.microsoftPowerBiId) {
+            if (this.shouldShowDependentField()) {
                 this._showEmbedUrl();
             } else {
                 this._hideEmbedUrl();
@@ -77,10 +82,21 @@ define(function(require) {
         },
 
         _showEmbedUrl: function() {
-            if (this.fields.type.val() === this.options.microsoftPowerBiId) {
+            if (this.shouldShowDependentField()) {
                 this.fields.embedUrl.removeClass('hide');
                 this.fields.embedUrl.closest('div.control-group').removeClass('hide');
             }
+        },
+
+        isValueSelected: function() {
+            return this.fields.type.val() === this.options.googleDataStudioId;
+        },
+
+        shouldShowDependentField: function() {
+            // We show the embed_url field if we selected this value or not the default one
+            // Fallback in case we have several similar dashboards extensions enabled
+            return this.isValueSelected()
+                || (this.fields.type.val() !== '' && this.fields.type.val() !== this.options.defaultValueId);
         },
 
         /**

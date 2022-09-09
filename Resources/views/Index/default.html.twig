@@ -9,7 +9,7 @@
         {'label': 'oro.dashboard.menu.dashboards_tab.label'|trans },
         {'label': dashboard.getLabel() }
     ] %}
-    {% include 'OroNavigationBundle:Menu:breadcrumbs.html.twig' %}
+    {% include '@OroNavigation/Menu/breadcrumbs.html.twig' %}
 {% endblock breadcrumb %}
 
 {% block content %}
@@ -40,7 +40,7 @@
                             }) }}>
                                 {% for dashboardModel in dashboards %}
                                     <option value="{{ dashboardModel.id }}"{% if dashboardModel.id == dashboard.id %} selected="selected"{% endif %}>
-                                        {{ dashboardModel.getLabel()|truncate(50) }}
+                                        {{ dashboardModel.getLabel() }}
                                     </option>
                                 {% endfor %}
                             </select>

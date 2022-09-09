@@ -6,7 +6,9 @@ use Symfony\Component\Validator\Constraint;
 
 class MicrosoftPowerBiDashboard extends Constraint
 {
-    public string $message = 'This value should not be blank.';
+    public string $blankMessage = 'This value should not be blank.';
+
+    public string $patternMessage = 'This value is not valid. Url should start with "https://app.powerbi.com/reportEmbed?"';
 
     /**
      * {@inheritdoc}
