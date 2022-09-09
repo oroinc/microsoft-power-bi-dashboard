@@ -1,2 +1,2 @@
 bundles:
-    - '@MicrosoftPowerBiDashboard/Form/fields.html.twig'
+    - '@OroMicrosoftPowerBiDashboard/Form/fields.html.twig'

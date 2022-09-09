@@ -1,4 +1,4 @@
 dashboards:
     dashboards:
         microsoft_power_bi:
-            twig: MicrosoftPowerBiDashboardBundle:Index:default.html.twig
+            twig: OroMicrosoftPowerBiDashboardBundle:Index:default.html.twig

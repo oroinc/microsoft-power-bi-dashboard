@@ -75,17 +75,17 @@ class OroMicrosoftPowerBiDashboardBundleInstaller implements Installation, Exten
                 DashboardFields::EMBED_URL,
                 Types::STRING,
                 [
-                    'notnull' => false,
-                    'length' => 8190,
+                    'notnull'     => false,
+                    'length'      => 8190,
                     'oro_options' => [
-                        'extend' => [
+                        'extend'    => [
                             'is_extend' => true,
-                            'owner' => ExtendScope::OWNER_CUSTOM,
+                            'owner'     => ExtendScope::OWNER_CUSTOM,
                         ],
-                        'datagrid' => ['is_visible' => DatagridScope::IS_VISIBLE_FALSE, 'show_filter' => false],
-                        'form' => ['is_enabled' => true],
-                        'view' => ['is_displayable' => false, 'priority' => 1],
-                        'merge' => ['display' => false],
+                        'datagrid'  => ['is_visible' => DatagridScope::IS_VISIBLE_FALSE, 'show_filter' => false],
+                        'form'      => ['is_enabled' => true],
+                        'view'      => ['is_displayable' => false, 'priority' => 1],
+                        'merge'     => ['display' => false],
                         'dataaudit' => ['auditable' => false]
                     ]
                 ]

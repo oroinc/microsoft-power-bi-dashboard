@@ -1,2 +1,2 @@
 bundles:
-    - { name: Oro\Bundle\MicrosoftPowerBiDashboardBundle\MicrosoftPowerBiDashboardBundle, priority: 1000 }
+    - { name: Oro\Bundle\MicrosoftPowerBiDashboardBundle\OroMicrosoftPowerBiDashboardBundle, priority: 1000 }
