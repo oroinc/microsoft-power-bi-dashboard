@@ -44,7 +44,7 @@ class OroMicrosoftPowerBiDashboardBundleInstaller implements Installation, Exten
         $table = $schema->getTable('oro_dashboard');
 
         // We implement the enum only if it was not implemented by another similar extension
-        // See https://git.oroinc.com/extensions/google-data-studio-dashboard
+        // See oro/google-data-studio-dashboard extension for example
         if (!$schema->hasTable('oro_enum_dashboard_type')) {
             $this->extendExtension->addEnumField(
                 $schema,
@@ -69,7 +69,7 @@ class OroMicrosoftPowerBiDashboardBundleInstaller implements Installation, Exten
         }
 
         // We implement the column only if it was not implemented by another similar extension
-        // See https://git.oroinc.com/extensions/google-data-studio-dashboard
+        // See oro/google-data-studio-dashboard extension for example
         if (!$table->hasColumn(DashboardFields::EMBED_URL)) {
             $table->addColumn(
                 DashboardFields::EMBED_URL,

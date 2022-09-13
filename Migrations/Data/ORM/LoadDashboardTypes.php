@@ -23,6 +23,7 @@ class LoadDashboardTypes extends AbstractEnumFixture
         $existingValues = $enumRepo->getValues();
 
         // Removing already existing values that should not be added
+        // In case similar extensions like oro/google-data-studio-dashboard are already installed
         foreach ($existingValues as $existingValue) {
             if (array_key_exists($existingValue->getId(), $valuesToInsert)) {
                 unset($valuesToInsert[$existingValue->getId()]);

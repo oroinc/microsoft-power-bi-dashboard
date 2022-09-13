@@ -12,4 +12,4 @@ The bundle should be installed with a simple `oro:platform:update` command. Then
 
 ## Known Issues, Reflexions & TODOs
 
-See https://git.oroinc.com/extensions/google-data-studio-dashboard that might provoke conflicts if installed
+See oro/google-data-studio-dashboard extension, compatibility must be checked if it is already installed
