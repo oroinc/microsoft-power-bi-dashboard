@@ -31,7 +31,7 @@ class LoadDashboardTypes extends AbstractEnumFixture
         }
         // Persisting values
         foreach ($valuesToInsert as $id => $name) {
-            $priority = match($id) {
+            $priority = match ($id) {
                 $this->getDefaultValue() => 1,
                 default => 2
             };

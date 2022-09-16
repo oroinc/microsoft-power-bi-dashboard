@@ -9,7 +9,9 @@ use Symfony\Component\Validator\ConstraintValidator;
 
 class MicrosoftPowerBiDashboardValidator extends ConstraintValidator
 {
-    public const POWER_BI_URL_EMBED_PATTERN = '/^https:\/\/app\.powerbi\.com\/reportEmbed\?[a-zA-Z0-9\/\-_=&]*$/';
+    private const POWER_BI_URL_START = 'https://app.powerbi.com/reportEmbed?';
+
+    private const POWER_BI_URL_EMBED_PATTERN = '/^https:\/\/app\.powerbi\.com\/reportEmbed\?[a-zA-Z0-9\/\-_=&]*$/';
 
     /**
      * @param Dashboard|object $value
@@ -44,7 +46,10 @@ class MicrosoftPowerBiDashboardValidator extends ConstraintValidator
                         ->atPath('embed_url')
                         ->addViolation();
                 } elseif (!preg_match(self::POWER_BI_URL_EMBED_PATTERN, $value->getEmbedUrl())) {
-                    $this->context->buildViolation($constraint->patternMessage)
+                    $this->context->buildViolation(
+                        $constraint->patternMessage,
+                        ['%urlStart%' => self::POWER_BI_URL_START]
+                    )
                         ->atPath('embed_url')
                         ->addViolation();
                 }

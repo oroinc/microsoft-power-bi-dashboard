@@ -13,9 +13,6 @@ use Oro\Bundle\MicrosoftPowerBiDashboardBundle\Model\DashboardFields;
 use Oro\Bundle\MigrationBundle\Migration\Installation;
 use Oro\Bundle\MigrationBundle\Migration\QueryBag;
 
-/**
- * ORO installer for MicrosoftPowerBiDashboardBundle.
- */
 class OroMicrosoftPowerBiDashboardBundleInstaller implements Installation, ExtendExtensionAwareInterface
 {
     protected ExtendExtension $extendExtension;
@@ -51,7 +48,6 @@ class OroMicrosoftPowerBiDashboardBundleInstaller implements Installation, Exten
                 $table,
                 DashboardFields::TYPE,
                 DashboardEnums::DASHBOARD_TYPE_CODE,
-
                 false,
                 false,
                 [
