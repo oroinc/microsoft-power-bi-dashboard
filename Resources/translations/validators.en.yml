@@ -1,0 +1,6 @@
+oro:
+    oro_microsoft_power_bi_dashboard:
+        validator:
+            constraints:
+                blank: 'This value should not be blank.'
+                pattern: 'This value is not valid. Url should start with "%urlStart%".'

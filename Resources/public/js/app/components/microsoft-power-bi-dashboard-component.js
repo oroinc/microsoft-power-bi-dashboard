@@ -89,7 +89,7 @@ define(function(require) {
         },
 
         isValueSelected: function() {
-            return this.fields.type.val() === this.options.googleDataStudioId;
+            return this.fields.type.val() === this.options.microsoftPowerBiId;
         },
 
         shouldShowDependentField: function() {
@@ -111,7 +111,7 @@ define(function(require) {
             this.fields = {};
 
             MicrosoftPowerBiDashboardComponent.__super__.dispose.call(this);
-        },
+        }
     });
 
     return MicrosoftPowerBiDashboardComponent;

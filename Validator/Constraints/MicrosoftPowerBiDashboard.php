@@ -6,9 +6,9 @@ use Symfony\Component\Validator\Constraint;
 
 class MicrosoftPowerBiDashboard extends Constraint
 {
-    public string $blankMessage = 'This value should not be blank.';
+    public string $blankMessage = 'oro.oro_microsoft_power_bi_dashboard.validator.constraints.blank';
 
-    public string $patternMessage = 'This value is not valid. Url should start with "https://app.powerbi.com/reportEmbed?"';
+    public string $patternMessage = 'oro.oro_microsoft_power_bi_dashboard.validator.constraints.pattern';
 
     /**
      * {@inheritdoc}
