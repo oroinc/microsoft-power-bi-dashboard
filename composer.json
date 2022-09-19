@@ -14,14 +14,8 @@
     "psr-4": {"Oro\\Bundle\\MicrosoftPowerBiDashboardBundle\\": ""},
     "exclude-from-classmap": ["/Tests/"]
   },
-  "repositories": {
-    "composer": {
-      "type": "composer",
-      "url": "https://packagist.orocrm.com"
-    }
-  },
   "require": {
-    "oro/commerce-enterprise": "5.0.*"
+    "oro/platform": "5.0.*"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
